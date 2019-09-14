@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAA GOO LMAO DONT KILL ME XD</title>
+    <script type="text/javascript">
+
+        function f1(objButton) {
+            R = objButton.value;
+            document.getElementById("hehe").value = R;
+        }
+
+        function validate(_form) {
+            var checkbox = document.querySelector('input[name="X[]"]:checked');
+
+            if(!checkbox) {
+                document.getElementById("err").innerHTML = "Выберите хотя бы одно значение Х\n";
+                return false;
+            }
+
+            var Y = _form.Y.value;
+            if (Y < -3 || Y > 3 || isNaN(Y) || Y === "") {
+                return false;
+            } 
+
+            var H = _form.hehe.value;
+            if (H < 1 || H > 5 || isNaN(H) || H === "") {
+                document.getElementById("err").innerHTML = "Выберите значение R\n";
+                return false;
+            }
+
+            
+        }
+        var goodY = false;
+        var goodX = false;
+        var goodR = false;
+
+        function valY(txt) {
+           let Y = txt.value;
+           if (Y === "") {
+                goodY = false;
+           } else {
+                goodY = true;
+           }
+           submitButtonBehavior()   
+        }   
+
+        function valR() {
+            let R = document.getElementById("hehe").value;
+            if (R === "") {
+                goodR = false;
+           } else {
+                goodR = true;
+           }
+            submitButtonBehavior()
+       }
+       function valX() {
+            let count = 0;
+            let checks = document.forms["form"]["X[]"];
+            for (let i of checks) {
+            if (i.checked) {
+                count += 1;
+            }
+        }
+        if (count < 1) {
+            goodX = false
+        } else {
+            goodX = true;
+        }
+        submitButtonBehavior()
+       }
+
+
+        function submitButtonBehavior() {
+            var submitButton = document.getElementById("sub");
+            if (!(goodX && goodY && goodR)) {
+            submitButton.setAttribute("disabled", "disable");
+        } else {
+            submitButton.removeAttribute("disabled")
+            }
+        }
+
+    </script>
+
+    <style type="text/css"> 
+        label {
+            color: #f05348 ;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: auto;
+            font-family: "ALS Schlange sans", serif;
+            min-height: 100%;
+
+        }
+
+
+        header {
+            text-align: center;
+            width: 100%;
+            height: auto;
+            background-size: cover;
+            background: url('https://wallpapercave.com/wp/wp1853361.jpg') fixed bottom 10px right 0;
+            overflow: auto;
+        }
+
+        header .overlay {
+            width: 100%;
+            height: auto;
+            overflow: auto;
+            padding: 10px;
+            color: #FFF;
+            text-shadow: 1px 1px 1px #333;
+            background-image: linear-gradient( 135deg, rgba(159, 5, 255, 0.41) 10%, #fd5e086b 100%);
+
+        }
+
+        footer {
+            overflow: auto;
+            float: bottom;
+            text-align: center;
+            clear: both;
+            position: relative;
+            height: 200px;
+            bottom: 0;
+            margin-top: 10px;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background: url('https://wallpapercave.com/wp/wp1853361.jpg') fixed bottom 10px right 0;
+            overflow: auto;
+        }
+
+        .overlay {
+            width: 100%;
+            height: 400px;
+            overflow: auto;
+            padding: 10px;
+            color: #FFF;
+            background-image: linear-gradient( 135deg, rgba(159, 5, 255, 0.41) 10%, #fd5e086b 100%);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        body .left {
+            float: left;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            margin-left: 50px;
+            width: 40%;
+            height: 40%;
+            padding: 10px;
+            min-height: 100%;
+        }
+
+        body .right {
+            text-align: right;
+            float: right;
+            width: 40%;
+            height: 40%;
+            padding: 50px;
+        }
+
+        body .header-left {
+            padding: 10px;
+            float: left;
+        }
+
+        body .header-right {
+            padding: 10px;
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        p {
+            margin-top: 15px;
+
+        }
+
+        input[type=button] {
+            width: 15%;
+            height: 5%;
+            background-color: #fff;
+            border: 1px solid #9c9f9d;
+            -webkit-transition: all .2s ease-out;
+            -moz-transition: all .2s ease-out;
+            -o-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+        }
+
+        input[type=button]:hover {
+            border-color: #d29bff;
+            color: #000;
+            background: #fff;
+            outline: 5px;
+        }
+
+        input[type=button]:focus  {
+            border-color: #d29bff;
+            color: #000;
+            background: #fff;
+            outline: 12px;
+            border-radius: 12px;
+        }
+
+        input[type=button]:active {
+            color: #d29bff;
+        }
+
+        input[type=text] {
+            border: 1px solid #ccc;
+            width: 25%;
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+
+        input[type=text]:focus {
+            border-color: #d29bff;
+            width: 30.6%;
+            color: #000;
+            background: #fff;
+            outline: 0;
+        }
+
+
+        input[type=submit] {
+            width: 30%;
+            border-radius: 6px;
+            border-width: 0;
+            padding: 1em 3em;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+            background-image: linear-gradient(to right, #12c2e9 0%, #c471ed 50%, #f64f59 100%);
+            transition: 0.5s;
+            outline: 0;
+        }
+
+
+
+        input[type=submit]:hover {
+            border-color: #fff;
+            color: #fff;
+            background-position: 90% 12%;
+            outline: 12px;
+            border-radius: 16px;
+            box-shadow: 0px 2px 5px #8c8c8c;
+            
+        }
+        
+        input[type=submit]:active {
+            border-color: #fff;
+            color: #fff;
+            background-position: 60% 12%;
+            border-radius: 16px;
+            box-shadow: 0px 1px 2px #8c8c8c;
+            outline: 0;
+        }
+
+        input[type=submit]:disabled,
+        button:disabled {
+            background-image: linear-gradient(to left, #a4e0ed 0%, #e1c5f0 50%, #a4e0ed 100%);
+            transition: 1s;
+        }
+    </style>
+
+
+</head>
+<body>
+        <header>
+            <div id="overlay" class="overlay">
+                <div class="header-left">
+                    <h1><img class="logo" src="image/company_logo.png" width=30% height=30%></h1>
+                </div>
+                <div class="header-right">
+                    <h3>
+                        Вариант: 214019<br>
+                        Чайка Алексей, гр. P3214
+                    </h3>
+                </div>
+            </div>
+
+        </header>
+
+        <form class="form" id="form" action="script/action.php" method="get" onsubmit="return validate(this)">
+            <div class="left">
+                <table>
+                    Изменение Х:
+                    <tr>
+                        <td width="50px">
+                            <input type="checkbox" name="X[]" value="-5" onchange="valX();"> -5
+                        </td>
+                        <td width="50px">
+                            <input type="checkbox" name="X[]" value="-4" onchange="valX();"> -4
+                        </td>
+                        <td width="50px">
+                            <input type="checkbox" name="X[]" value="-3"  onchange="valX();"> -3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50px">
+                            <input type="checkbox" name="X[]" value="-2" onchange="valX();"> -2
+                        </td>
+                        <td width="50px">
+                            <input type="checkbox" name="X[]" value="-1"  onchange="valX();"> -1
+                        </td>
+                        <td width="50px">
+                            <input type="checkbox" name="X[]" value="0"  onchange="valX();"> 0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50px">
+                            <input type="checkbox" name="X[]" value="1"  onchange="valX();"> 1
+                        </td>
+                        <td width="50px">
+                            <input type="checkbox" name="X[]" value="2"  onchange="valX();"> 2
+                        </td>
+                        <td width="50px">
+                            <input type="checkbox" name="X[]" value="3"  onchange="valX();"> 3<br>
+                        </td>
+                        
+                    </tr>
+                </table>
+                <p>
+                    Изменение Y:
+                    <input type="text" pattern ="^(?!-0$)-?(3$|([0-2](\.\d+)?))$" id="Y" name="Y" size="6" placeholder=" от -3 до 3" 
+                                        title="Используйте точку, целые и дробные числа от -3 до 3" 
+                                            onkeyup="valY(this);" required>
+                </p>
+                <p>
+                    Изменение R:
+                    <input type="button" name="R" value="1" onclick="f1(this); valR();">
+                    <input type="button" name="R" value="2" onclick="f1(this); valR();" >
+                    <input type="button" name="R" value="3" onclick="f1(this); valR();">
+                    <input type="button" name="R" value="4" onclick="f1(this); valR();">
+                    <input type="button" name="R" value="5" onclick="f1(this); valR();">
+                    <input type="hidden" id="hehe" name="hehe">
+                </p>
+                <p>
+                    <input type="submit" id="sub" name="sub" disabled="disable">
+                </p>
+                <p>
+                    <label id="err"> </label>
+                </p>
+                
+            </div>
+        </form>
+        <div class="right">
+
+            <canvas id="canvas" width="230px" height="230px" style="border:1px solid #d3d3d3;">
+                gaa goo lmao dont kill me
+            </canvas>
+
+        </div>
+<script type="text/javascript">
+    plot();
+    function plot() {
+         var ctx = document.getElementById("canvas").getContext("2d");
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                ctx.beginPath();
+                ctx.fillStyle = "#7ca1ff";
+                ctx.rect(110, 110, 40, -80);
+                ctx.closePath();
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.moveTo(110, 110);
+                ctx.arc(110, 110, 80, 0, Math.PI / 2, false);
+                ctx.closePath();
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.moveTo(110, 110);
+                ctx.lineTo(110, 70);
+                ctx.lineTo(30, 110);
+                ctx.lineTo(110, 110);
+                ctx.closePath();
+                ctx.fill();
+
+                // оси
+                ctx.beginPath();
+                ctx.moveTo(110, 0);
+                ctx.lineTo(110, 230);
+                ctx.moveTo(0, 110);
+                ctx.lineTo(230, 110);
+
+                // стрелки осей
+                ctx.moveTo(110, 0);
+                ctx.lineTo(113, 5);
+                ctx.moveTo(110, 0);
+                ctx.lineTo(107, 5);
+
+                ctx.moveTo(230, 110);
+                ctx.lineTo(225, 113);
+                ctx.moveTo(230, 110);
+                ctx.lineTo(225, 107);
+
+
+                // засечки x
+                ctx.fillStyle = "#121164";
+                ctx.moveTo(30, 115);
+                ctx.lineTo(30, 105);
+                ctx.fillText("-R", 26, 125);
+
+                ctx.moveTo(70, 115);
+                ctx.lineTo(70, 105);
+                ctx.fillText("-R/2", 60, 125);
+
+                ctx.moveTo(150, 115);
+                ctx.lineTo(150, 105);
+                ctx.fillText("R/2", 144, 125);
+
+                ctx.moveTo(190, 115);
+                ctx.lineTo(190, 105);
+                ctx.fillText("R", 186, 125);
+
+                // засечки y
+                ctx.moveTo(115, 150);
+                ctx.lineTo(105, 150);
+                ctx.fillText("-R/2", 117, 153);
+
+                ctx.moveTo(115, 190);
+                ctx.lineTo(105, 190);
+                ctx.fillText("-R", 117, 193);
+
+                ctx.moveTo(115, 70);
+                ctx.lineTo(105, 70);
+                ctx.fillText("R/2", 117, 73);
+
+                ctx.moveTo(115, 30);
+                ctx.lineTo(105, 30);
+                ctx.fillText("R", 117, 33);
+
+                ctx.fillText("y", 115, 6);
+                ctx.fillText("x", 224, 120);
+                ctx.stroke(); 
+    } 
+
+
+</script>
+
+</body>
+<footer class="footer">
+    
+copyrights reserved 2019 piped
+
+</footer>
+</html>
